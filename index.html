@@ -102,11 +102,12 @@ nav a.active, nav a:hover {
     background: #fff;
     position: absolute;
     top: 70px;
-    right: 5%;
-    width: 200px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    padding: 10px 0;
+    right: 0; /* ✅ align menu to right edge */
+    width: 250px; /* ✅ wider for better readability */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-radius: 0 0 10px 10px; /* ✅ rounded bottom only */
+    padding: 15px 0;
+    animation: dropdown 0.25s ease-out;
   }
 
   nav ul.active {
@@ -115,12 +116,21 @@ nav a.active, nav a:hover {
 
   .menu-toggle {
     display: block;
+    font-size: 2rem;
+    padding: 5px;
   }
 
   .logo img {
     width: 45px;
   }
 }
+
+/* Smooth dropdown animation */
+@keyframes dropdown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 </style>
 
 <script>
