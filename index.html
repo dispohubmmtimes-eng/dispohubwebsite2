@@ -158,20 +158,37 @@ menuToggle.addEventListener('click', () => {
 
 
 <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="hero">
   <div class="container">
     <h1>Eco-Friendly Disposable Products</h1>
     <p>Premium Quality Paper Plates, Cups, and Sustainable Solutions for Every Occasion</p>
-    <a href="products.html" class="btn-primary">Explore Products</a>
   </div>
 </section>
 
+
+<!-- Button outside the hero (will appear below banner on all devices) -->
+<div class="cta-button">
+  <a href="products.html" class="btn-primary">Explore Products</a>
+</div>
+
+
 <style>
 .hero {
-  background: url('assets/images/banner.jpg') center/cover no-repeat;
+  background: url('assets/banner.jpg') center/cover no-repeat;
   text-align: center;
-  padding: 100px 20px;
+  height: 100%;
+  width: 100%;
   color: #fff;
+
+  /* ✅ Flex to center content vertically */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* ✅ Optional: fix banner height for consistency */
+  min-height: 400px;
 }
 
 .hero h1 {
@@ -200,26 +217,33 @@ menuToggle.addEventListener('click', () => {
   background: #005f8c;
 }
 
-/* ✅ Mobile-friendly adjustments */
+/* ✅ Mobile adjustments */
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 15px;
-    background-size: cover;
+    height: 100%;
+    width: 100%;
+    min-height: 100px;
+    background-size: 100%;
     background-position: center;
   }
 
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-
+  .hero h1,
   .hero p {
-    font-size: 0.95rem;
-    margin: 15px 0;
+    display: none; /* ✅ Hide headings and subtext */
   }
 
-  .btn-primary {
-    padding: 10px 20px;
-    font-size: 0.95rem;
+</style>
+
+<style>
+  .cta-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .cta-button .btn-primary {
+    font-size: 0.85rem;
+    padding: 8px 16px;
   }
 }
 </style>
