@@ -38,6 +38,7 @@
 
 <style>
 /* Unified Header Styles */
+/* Unified Header Styles */
 header {
   background: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -52,7 +53,11 @@ header .container {
   align-items: center;
   padding: 15px 5%;
 }
-
+header .container {
+  position: relative; /* ✅ Add this */
+  overflow: visible;   /* ✅ Optional if any overflow is hidden */
+}
+  
 .logo {
   display: flex;
   align-items: center;
@@ -96,17 +101,28 @@ nav a.active, nav a:hover {
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
+  header .container {
+    position: relative;
+  }
+
   nav ul {
     display: none;
     flex-direction: column;
     background: #fff;
     position: absolute;
-    top: 70px;
-    right: 5%;
-    width: 200px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    padding: 10px 0;
+    top: 100%; /* pushes menu below navbar */
+    right: 0;
+    width: 250px;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 10px 10px;
+    padding: 15px 0;
+    animation: dropdown 0.25s ease-out;
+  }
+
+  nav ul li a {
+    padding: 10px 20px;
+    display: block;
   }
 
   nav ul.active {
@@ -115,12 +131,21 @@ nav a.active, nav a:hover {
 
   .menu-toggle {
     display: block;
+    font-size: 2rem;
+    padding: 5px;
   }
 
   .logo img {
     width: 45px;
   }
 }
+
+/* Smooth dropdown animation */
+@keyframes dropdown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 </style>
 
 <script>
@@ -133,10 +158,6 @@ menuToggle.addEventListener('click', () => {
 </script>
 
 
-
-  
-
-  
 
 <!-- Products Hero -->
 <section class="products-hero">
