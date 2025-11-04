@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - DispoHub</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.jpg">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/logo.jpg" alt="DispoHub Logo">
+      <span>DispoHub</span>
+    </div>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </div>
+</header>
+
+<style>
+/* Header */
+header {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #0077b6;
+}
+.logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+}
+nav a.active, nav a:hover {
+  color: #0077b6;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #0077b6;
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+</style>
+
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+</script>
+
+<!-- Contact Hero Section -->
+<section class="contact-hero">
+  <div class="container">
+    <h1>Get In Touch With Us</h1>
+    <p>Have questions or need a custom quote? We're here to help!</p>
+  </div>
+</section>
+
+<style>
+.contact-hero {
+  background: url('assets/images/contact-banner.jpg') center/cover no-repeat;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+}
+.contact-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.contact-hero p {
+  font-size: 1.1rem;
+}
+@media (max-width: 768px) {
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+  .contact-hero p {
+    font-size: 1rem;
+  }
+}
+</style>
+
+<!-- Contact Info + Form Section -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      
+      <!-- Contact Details -->
+      <div class="contact-info">
+        <h2>Contact Details</h2>
+        <p><strong>Phone:</strong> <a href="tel:+911234567890">+91 12345 67890</a></p>
+        <p><strong>Email:</strong> <a href="mailto:sales@dispohub.mmtimes.in">sales@dispohub.mmtimes.in</a></p>
+        <p><strong>Address:</strong> Hyderabad, Telangana, India</p>
+        <p><strong>Working Hours:</strong><br> Monday - Saturday: 9:00 AM – 7:00 PM</p>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form">
+        <form action="#" method="POST">
+          <h2>Send Us a Message</h2>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="phone" placeholder="Your Phone" required>
+          <textarea name="message" rows="5" placeholder="Your Message / Quote Request" required></textarea>
+          <button type="submit">Submit Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+.contact-info, .contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+.contact-info h2, .contact-form h2 {
+  color: #0077b6;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+.contact-info p {
+  margin: 10px 0;
+  color: #444;
+  line-height: 1.6;
+}
+.contact-info a {
+  color: #0077b6;
+  text-decoration: none;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+.contact-form button {
+  background: #0077b6;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contact-form button:hover {
+  background: #005f8c;
+}
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column;
+  }
+}
+</style>
+
+<!-- Google Map Embed (Optional) -->
+<section class="map-section">
+  <div class="container">
+    <iframe src="https://www.google.com/maps/embed?pb=YOUR_LOCATION_EMBED_URL" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+
+<style>
+.map-section iframe {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+</style>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© 2025 DispoHub • All Rights Reserved</p>
+    <p><a href="tel:+911234567890">+91 12345 67890</a> | <a href="mailto:sales@dispohub.mmtimes.in">sales@dispohub.mmtimes.in</a></p>
+  </div>
+</footer>
+
+<style>
+footer {
+  background: #0077b6;
+  color: #fff;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 0.9rem;
+}
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+footer a:hover {
+  color: #dff3ff;
+}
+</style>
+
+<!-- Global Styles -->
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f9fafb;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
+
+</body>
+</html>
