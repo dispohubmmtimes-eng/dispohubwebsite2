@@ -52,7 +52,11 @@ header .container {
   align-items: center;
   padding: 15px 5%;
 }
-
+header .container {
+  position: relative; /* ✅ Add this */
+  overflow: visible;   /* ✅ Optional if any overflow is hidden */
+}
+  
 .logo {
   display: flex;
   align-items: center;
@@ -96,18 +100,28 @@ nav a.active, nav a:hover {
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
+  header .container {
+    position: relative;
+  }
+
   nav ul {
     display: none;
     flex-direction: column;
     background: #fff;
     position: absolute;
-    top: 70px;
-    right: 0; /* ✅ align menu to right edge */
-    width: 250px; /* ✅ wider for better readability */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    border-radius: 0 0 10px 10px; /* ✅ rounded bottom only */
+    top: 100%; /* pushes menu below navbar */
+    right: 0;
+    width: 250px;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 10px 10px;
     padding: 15px 0;
     animation: dropdown 0.25s ease-out;
+  }
+
+  nav ul li a {
+    padding: 10px 20px;
+    display: block;
   }
 
   nav ul.active {
