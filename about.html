@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - DispoHub</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.jpg">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header with Navbar (same as index.html) -->
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="assets/images/logo.jpg" alt="DispoHub Logo">
+      <span>DispoHub</span>
+    </div>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </div>
+</header>
+
+<style>
+/* Header (same as index.html) */
+header {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #0077b6;
+}
+.logo img {
+  width: 50px;
+  margin-right: 10px;
+  height: auto;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+}
+nav a.active, nav a:hover {
+  color: #0077b6;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #0077b6;
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+</style>
+
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+</script>
+
+<!-- About Hero Section -->
+<section class="about-hero">
+  <div class="container">
+    <h1>About DispoHub</h1>
+    <p>Providing eco-friendly and high-quality disposable products for a sustainable future.</p>
+  </div>
+</section>
+
+<style>
+.about-hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/about-banner.jpg') center/cover no-repeat;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+}
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.about-hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+  .about-hero p {
+    font-size: 1rem;
+  }
+}
+</style>
+
+<!-- About Content Section -->
+<section class="about-content">
+  <div class="container">
+    <h2>Who We Are</h2>
+    <p>DispoHub is a leading provider of disposable eco-friendly products, dedicated to offering sustainable solutions to reduce harmful waste. Our mission is to provide high-quality, biodegradable plates, cups, straws, and packaging materials that cater to modern business and household needs.</p>
+
+    <h2>Our Vision</h2>
+    <p>To create a future where single-use products no longer harm the environment. Through innovation and a commitment to sustainability, we aim to replace traditional plastics with fully biodegradable alternatives.</p>
+  </div>
+</section>
+
+<style>
+.about-content {
+  padding: 60px 20px;
+  text-align: center;
+}
+.about-content h2 {
+  color: #0077b6;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+.about-content p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  color: #444;
+}
+</style>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© 2025 DispoHub • All Rights Reserved</p>
+    <p><a href="tel:+911234567890">+91 12345 67890</a> | <a href="mailto:sales@dispohub.mmtimes.in">sales@dispohub.mmtimes.in</a></p>
+  </div>
+</footer>
+
+<style>
+footer {
+  background: #0077b6;
+  color: #fff;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 0.9rem;
+}
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+footer a:hover {
+  color: #dff3ff;
+}
+</style>
+
+<!-- Global Styles -->
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f9fafb;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
+
+</body>
+</html>
 
